@@ -42,7 +42,7 @@ class CheckingAccountTest extends \PHPUnit_Framework_TestCase
         
         $srcAccount->transfer($destAccount, 500);
 
-        $this->assertEquals(1500, $this->account->getValue());
+        $this->assertEquals(1500, $srcAccount->getValue());
         $this->assertEquals(1500, $destAccount->getValue());
     }
 
