@@ -44,7 +44,8 @@ class AccountTemplate
      *
      * @return void
      *
-     * @throws AccountException
+     * @throws AccountException Dispara exceção se o saldo é insuficiente
+     *                          ou se valor excede o limite máximo da sessão
      */
     public function withdraw(float $value) : void
     {
@@ -71,6 +72,8 @@ class AccountTemplate
      * @param float $value  Valor a ser transferido
      *
      * @return void
+     *
+     * @throws AccountException Dispara exceção se saldo é insuficiente
      */
     public function transfer(AccountTemplate $destAccount, float $value) : void
     {
