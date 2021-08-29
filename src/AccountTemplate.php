@@ -48,7 +48,7 @@ class AccountTemplate
      */
     public function withdraw(float $value) : void
     {
-        if ($value > $this->value) {
+        if (($value + $this->tax) > $this->value) {
             throw new AccountException("Saldo insuficiente");
         } elseif ($value > $this->maxWithdraw) {
             throw new AccountException("Excedido valor máximo");
