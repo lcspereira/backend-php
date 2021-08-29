@@ -3,4 +3,7 @@ COPY . /usr/src/myapp
 
 WORKDIR /usr/src/myapp
 
-CMD [ "bash", "./run.sh" ]
+RUN apt-get update && apt-get install -y \
+	git \
+	zip 
+CMD [ "bash", "-x", "./run.sh" ]
